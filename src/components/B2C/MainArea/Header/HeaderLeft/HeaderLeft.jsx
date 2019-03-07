@@ -113,7 +113,7 @@ const HeaderLeft = () => {
 
               <Container fluid>
                 <Row style={{ marginTop: 5 }}>
-                  <Col xl="2" className="col-headerLeft-form-spt">
+                  <Col xl="3" className="col-headerLeft-form-spt">
                     <FormGroup>
                       <Label for="adults" className="lable-header-form-spt">
                         Adults
@@ -127,7 +127,7 @@ const HeaderLeft = () => {
                     </FormGroup>
                   </Col>
                   <Col xl="1" />
-                  <Col xl="2" className="col-headerLeft-form-spt">
+                  <Col xl="3" className="col-headerLeft-form-spt">
                     <FormGroup>
                       <Label for="childrens" className="lable-header-form-spt">
                         Childrens
@@ -141,7 +141,7 @@ const HeaderLeft = () => {
                     </FormGroup>
                   </Col>
                   <Col xl="1" />
-                  <Col xl="2" className="col-headerLeft-form-spt">
+                  <Col xl="3" className="col-headerLeft-form-spt">
                     <FormGroup>
                       <Label for="infants" className="lable-header-form-spt">
                         Infants
