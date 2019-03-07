@@ -1,0 +1,17 @@
+.signreg-wrapper-sp {
+  width: 50%;
+}
+.signreg-wrapper-sp div {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+.login-spt {
+  border-right: 1px solid white;
+  padding-right: 15px;
+}
+
+.register-spt {
+  padding-left: 15px;
+}
