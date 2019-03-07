@@ -1,0 +1,97 @@
+.titlebar-wrapper-spt {
+  width: 95%;
+  height: 55px;
+  background-color: #022d41;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.445);
+}
+
+.currency-wrapper-spt {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.currency-wrapper-spt select {
+  border: 1px solid rgb(139, 139, 139);
+  width: 130px;
+  height: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  padding-left: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+
+.currency-wrapper-spt select > option {
+  background: #022d41;
+}
+
+.auth-wrapper-spt {
+  width: 50%;
+}
+
+.signreg-wrapper-sp {
+  width: 50%;
+}
+.signreg-wrapper-sp div {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+.login-spt {
+  border-right: 1px solid white;
+  padding-right: 15px;
+}
+
+.register-spt {
+  padding-left: 15px;
+}
+
+.userinfo-wrapper-sp {
+  width: 50%;
+  padding: 0 30px;
+}
+
+.message-spt {
+  position: relative;
+}
+
+.circle-mess-spt {
+  position: absolute;
+  top: 8%;
+  left: 98%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #eb4d4b;
+  border-radius: 50%;
+}
+
+.circle-mess-spt p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.circle-user {
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-spt p {
+  margin: 0;
+  color: white;
+  margin-right: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}

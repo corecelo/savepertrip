@@ -1,0 +1,8 @@
+.navbar-wrapper-spt {
+  min-height: 100vh;
+  background-color: #00a8ff;
+  box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.425);
+  position: relative;
+  z-index: 999;
+  padding-top: 20px;
+}
