@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Icon } from "react-icons-kit";
 import { ic_message } from "react-icons-kit/md/ic_message";
 import { ic_arrow_drop_down } from "react-icons-kit/md/ic_arrow_drop_down";
 import "./titlerightstyle.css";
 
 const TitleRight = () => {
+  const [userSetting, setUserSetting] = useState(false);
+
+  const handleUserSetting = () => {
+    setUserSetting(!userSetting);
+  };
+
   return (
     <div className="userinfo-wrapper-sp d-flex justify-content-between align-items-center">
       <div className="message-spt">
@@ -21,7 +27,10 @@ const TitleRight = () => {
           <p style={{ fontSize: 10 }}>2</p>
         </div>
       </div>
-      <div className="user-spt d-flex justify-content-between align-items-center">
+      <div
+        className="user-spt d-flex justify-content-between align-items-center"
+        onClick={handleUserSetting}
+      >
         <div className="circle-user" />
         <p>GUEST</p>
         <div
@@ -34,6 +43,17 @@ const TitleRight = () => {
         >
           <Icon size={"100%"} icon={ic_arrow_drop_down} />
         </div>
+
+        {userSetting && (
+          <div className="guest-pop-spt">
+            <ul className="user-setting-spt">
+              <li>Profile</li>
+              <li>My Wallet</li>
+              <li>Transactions</li>
+              <li>Bookings</li>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
