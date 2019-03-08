@@ -4,3 +4,41 @@
   border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.445);
 }
+
+.slider-header-wrapper-spt {
+  width: 90%;
+  height: 200px;
+  border: 10px solid #00a8ff;
+  border-radius: 20px;
+}
+
+.text-header-ad-wrapper {
+  padding-right: 20px;
+}
+
+.offer-text-spt {
+  color: #00a8ff;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.offer-sub-text-spt {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.corporate-login-spt {
+  width: 90%;
+  height: 70px;
+  background-color: #00a8ff;
+  text-decoration: none;
+  color: white;
+  border: 2px solid #022d41;
+  border-radius: 10px;
+}
+
+.corporate-login-spt:hover {
+  color: white;
+  text-decoration: none;
+}
