@@ -7,7 +7,6 @@ import {
   creditCard,
   train,
   sunO,
-  heartbeat,
   handORight
 } from "react-icons-kit/fa";
 import { NavLink } from "react-router-dom";

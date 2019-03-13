@@ -1,5 +1,4 @@
 import React from "react";
-import { TabPanel } from "react-tabs";
 import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap";
 import { Icon } from "react-icons-kit";
 import { ic_compare_arrows } from "react-icons-kit/md";
