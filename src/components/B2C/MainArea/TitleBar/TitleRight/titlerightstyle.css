@@ -5,6 +5,7 @@
 
 .message-spt {
   position: relative;
+  cursor: pointer;
 }
 
 .circle-mess-spt {
@@ -90,4 +91,32 @@
   to {
     top: 150%;
   }
+}
+
+.notification-spt {
+  position: absolute;
+  top: 150%;
+  left: 60%;
+  transform: translate(-50%);
+  width: 200px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  animation-name: userSetting;
+  animation-duration: 1s;
+}
+
+.notification-spt::before {
+  content: "";
+  bottom: 97%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: white;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 1;
 }
