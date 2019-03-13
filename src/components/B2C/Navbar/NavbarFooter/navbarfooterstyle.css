@@ -6,10 +6,14 @@
 
 .divider-navbar-spt {
   width: 100%;
-  height: 3px;
+  height: 1px;
   background-color: #022d41;
+  margin-top: 10px;
 }
 
 .navbar-footer-spt p {
   color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
 }

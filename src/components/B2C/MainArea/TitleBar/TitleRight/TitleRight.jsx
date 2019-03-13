@@ -32,7 +32,7 @@ const TitleRight = () => {
         onClick={handleUserSetting}
       >
         <div className="circle-user" />
-        <p>GUEST</p>
+        <p>Guest</p>
         <div
           style={{
             width: 25,

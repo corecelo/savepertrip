@@ -14,108 +14,155 @@ import { NavLink } from "react-router-dom";
 
 // CSS Import
 import "./navbarItemstyle.css";
+import { heart } from "react-icons-kit/fa";
 
 const NavbarItem = () => {
   return (
-    <div className="navitems-spt mt-3 d-flex flex-column align-items-start justify-content-between">
-      <div className="d-flex align-items-center navlink-spt">
+    <div className="navitems-spt d-flex flex-column align-items-start justify-content-between">
+      <NavLink
+        to="/"
+        activeClassName="active"
+        className="d-flex align-items-center navlink-spt"
+      >
         <div
           style={{
             width: 20,
             height: 20,
-            color: "white"
+            color: "black",
+            marginRight: 20,
+            marginTop: -5
           }}
         >
           <Icon size={"100%"} icon={plane} />
         </div>
-        <NavLink to="/" activeClassName="active">
-          Flights
-        </NavLink>
-      </div>
-      <div className="d-flex align-items-center navlink-spt">
+        Flights
+      </NavLink>
+      <NavLink
+        to="/hotel"
+        activeClassName="active"
+        className="d-flex align-items-center navlink-spt"
+      >
         <div
           style={{
             width: 20,
             height: 20,
-            color: "white"
+            color: "black",
+            marginRight: 20,
+            marginTop: -5
           }}
         >
           <Icon size={"100%"} icon={hotel} />
         </div>
-        <NavLink to="/hotels">Hotels</NavLink>
-      </div>
-      <div className="d-flex align-items-center navlink-spt">
+        Hotels
+      </NavLink>
+      <NavLink
+        to="/bus"
+        activeClassName="active"
+        className="d-flex align-items-center navlink-spt"
+      >
         <div
           style={{
             width: 20,
             height: 20,
-            color: "white"
+            color: "black",
+            marginRight: 20,
+            marginTop: -5
           }}
         >
           <Icon size={"100%"} icon={bus} />
         </div>
-        <NavLink to="/bus">Bus</NavLink>
-      </div>
-      <div className="d-flex align-items-center navlink-spt">
+        Bus
+      </NavLink>
+      <NavLink
+        to="/visa"
+        activeClassName="active"
+        className="d-flex align-items-center navlink-spt"
+      >
         <div
           style={{
             width: 20,
             height: 20,
-            color: "white"
+            color: "black",
+            marginRight: 20,
+            marginTop: -5
           }}
         >
           <Icon size={"100%"} icon={creditCard} />
         </div>
-        <NavLink to="/visa">Visa</NavLink>
-      </div>
-      <div className="d-flex align-items-center navlink-spt">
+        Visa
+      </NavLink>
+      <NavLink
+        to="/irctc"
+        activeClassName="active"
+        className="d-flex align-items-center navlink-spt"
+      >
         <div
           style={{
             width: 20,
             height: 20,
-            color: "white"
+            color: "black",
+            marginRight: 20,
+            marginTop: -5
           }}
         >
           <Icon size={"100%"} icon={train} />
         </div>
-        <NavLink to="/irctc">IRCTC</NavLink>
-      </div>
-      <div className="d-flex align-items-center navlink-spt">
+        IRCTC
+      </NavLink>
+      <NavLink
+        to="/holiday"
+        activeClassName="active"
+        className="d-flex align-items-center navlink-spt"
+      >
         <div
           style={{
             width: 20,
             height: 20,
-            color: "white"
+            color: "black",
+            marginRight: 20,
+            marginTop: -5
           }}
         >
           <Icon size={"100%"} icon={sunO} />
         </div>
-        <NavLink to="/holidays">Holidays</NavLink>
-      </div>
-      <div className="d-flex align-items-center navlink-spt">
+        Holidays
+      </NavLink>
+      <NavLink
+        to="/insuarance"
+        activeClassName="active"
+        className="d-flex align-items-center navlink-spt"
+      >
         <div
           style={{
             width: 20,
             height: 20,
-            color: "white"
+            color: "black",
+            marginRight: 20,
+            marginTop: -5
           }}
         >
-          <Icon size={"100%"} icon={heartbeat} />
+          <Icon size={"100%"} icon={heart} />
         </div>
-        <NavLink to="/insurance">Insurance</NavLink>
-      </div>
-      <div className="d-flex align-items-center navlink-spt">
+        Insuarance
+      </NavLink>
+      <NavLink
+        to="/offline"
+        activeClassName="active"
+        className="d-flex align-items-center navlink-spt"
+      >
         <div
           style={{
             width: 20,
             height: 20,
-            color: "white"
+            color: "black",
+            marginRight: 20,
+            marginTop: -5
           }}
         >
           <Icon size={"100%"} icon={handORight} />
         </div>
-        <NavLink to="/offline">Offline</NavLink>
-      </div>
+        Offline
+      </NavLink>
     </div>
   );
 };

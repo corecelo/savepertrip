@@ -25,8 +25,8 @@
   transform: translate(-50%, -50%);
   margin: 0;
   color: white;
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
 .circle-user {
@@ -46,13 +46,13 @@
   margin: 0;
   color: white;
   margin-right: 10px;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
 }
 
 .guest-pop-spt {
   position: absolute;
-  top: 130%;
+  top: 150%;
   left: 60%;
   transform: translate(-50%);
   width: 150px;
@@ -64,6 +64,20 @@
   animation-duration: 1s;
 }
 
+.guest-pop-spt::before {
+  content: "";
+  bottom: 97%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: white;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 1;
+}
+
 .user-setting-spt {
   list-style: none;
   padding: 0;
@@ -71,9 +85,9 @@
 
 @keyframes userSetting {
   from {
-    top: 170%;
+    top: 180%;
   }
   to {
-    top: 130%;
+    top: 150%;
   }
 }

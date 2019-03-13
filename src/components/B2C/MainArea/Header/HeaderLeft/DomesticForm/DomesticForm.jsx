@@ -13,7 +13,10 @@ const DomesticForm = () => {
   return (
     <React.Fragment>
       <div className="book-text-sp">
-        <p>Book Domestic Flight Tickets</p>
+        <p>Save on Flights</p>
+        <h6 style={{ marginBottom: 30, letterSpacing: 0.5 }}>
+          Honest Pricing. Genuine Savings
+        </h6>
       </div>
 
       <div className="form-wrapper-sp">
@@ -150,7 +153,7 @@ const DomesticForm = () => {
             </Row>
           </Container>
           <div className="divider-header-wrapper-spt">
-            <div className="divider-header-spt" />
+            <div className="divider-header-left-spt" />
           </div>
           <div className="button-header-wrapper-sp d-flex justify-content-end">
             <button

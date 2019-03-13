@@ -8,13 +8,9 @@ const HeaderLeft = () => {
   return (
     <div className="headerleft-wrapper-spt">
       <Tabs className="tab-spt">
-        <TabList>
-          <Tab>Domestic</Tab>
-          <Tab>International</Tab>
-        </TabList>
-        <TabPanel>
+        <div>
           <DomesticForm />
-        </TabPanel>
+        </div>
         <TabPanel>
           <h2>Any content 2</h2>
         </TabPanel>
