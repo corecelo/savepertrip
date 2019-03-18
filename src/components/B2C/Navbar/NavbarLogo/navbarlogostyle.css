@@ -1,22 +1,18 @@
 .logobox-spt {
-  border-top: 5px solid #022d41;
-  border-bottom: 5px solid #022d41;
-  width: 50%;
-  height: 80px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.479);
-  border-radius: 15px;
+  width: 100%;
+  height: 130px;
+  border-radius: 0px 0px 9px 9px;
   padding: 40px 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  background-color: var(--main-bg-color);
 }
 
 .logobox-spt h3 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 40px;
+  font-weight: 700;
+  font-size: 25px;
   color: white;
-  letter-spacing: 3px;
   margin: 0;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.479);
 }
 
 .logobox-spt p {

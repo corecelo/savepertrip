@@ -1,13 +1,12 @@
 import React from "react";
 import "./navbarlogostyle.css";
+import logo from "../../../../logo.png";
 
 const NavbarLogo = () => {
   return (
     <div className="logobox-spt d-flex align-items-center justify-content-center flex-column">
-      <h3>
-        S<span>P</span>T
-      </h3>
-      <p>Save Per Trip</p>
+      <img src={logo} alt="" />
+      <h3>Save Per Trip</h3>
     </div>
   );
 };

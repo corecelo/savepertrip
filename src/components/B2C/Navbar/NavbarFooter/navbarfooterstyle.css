@@ -5,14 +5,14 @@
 }
 
 .divider-navbar-spt {
-  width: 100%;
+  width: 50%;
   height: 1px;
-  background-color: #022d41;
+  background-color: var(--font-color);
   margin-top: 10px;
 }
 
 .navbar-footer-spt p {
-  color: white;
+  color: var(--font-color);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 15px;

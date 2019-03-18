@@ -1,7 +1,8 @@
 .navitems-spt {
   width: 100%;
   height: 350px;
-  padding-left: 20px;
+  background-color: white;
+  padding: 10px;
 }
 
 .navitems-spt .navlink-spt {
@@ -9,26 +10,23 @@
 }
 
 .active {
-  background-color: white;
+  background-color: #009ac01e;
   color: #00a8ff;
-  border: 0;
-  border-radius: 9px;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.384);
 }
 
 .navitems-spt a {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
-  color: black;
-  font-weight: 500;
-  font-size: 16px;
+  color: #009ac0;
+  font-weight: 600;
+  font-size: 15px;
   letter-spacing: 0px;
-  padding: 5px 120px 5px 15px;
-  border-radius: 9px;
+  padding: 10px 120px 10px 40px;
   transition: 0.2s ease-in-out;
+  border-radius: 40px;
 }
 
 .navitems-spt a:hover {
-  background-color: white;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.384);
+  background-color: #b1b1b12c;
+  color: #00a8ff;
 }

@@ -27,7 +27,7 @@ const NavbarItem = () => {
           style={{
             width: 20,
             height: 20,
-            color: "black",
+            color: "#009ac0",
             marginRight: 20,
             marginTop: -5
           }}
@@ -45,7 +45,7 @@ const NavbarItem = () => {
           style={{
             width: 20,
             height: 20,
-            color: "black",
+            color: "#009ac0",
             marginRight: 20,
             marginTop: -5
           }}
@@ -63,7 +63,7 @@ const NavbarItem = () => {
           style={{
             width: 20,
             height: 20,
-            color: "black",
+            color: "#009ac0",
             marginRight: 20,
             marginTop: -5
           }}
@@ -81,7 +81,7 @@ const NavbarItem = () => {
           style={{
             width: 20,
             height: 20,
-            color: "black",
+            color: "#009ac0",
             marginRight: 20,
             marginTop: -5
           }}
@@ -99,7 +99,7 @@ const NavbarItem = () => {
           style={{
             width: 20,
             height: 20,
-            color: "black",
+            color: "#009ac0",
             marginRight: 20,
             marginTop: -5
           }}
@@ -117,7 +117,7 @@ const NavbarItem = () => {
           style={{
             width: 20,
             height: 20,
-            color: "black",
+            color: "#009ac0",
             marginRight: 20,
             marginTop: -5
           }}
@@ -135,7 +135,7 @@ const NavbarItem = () => {
           style={{
             width: 20,
             height: 20,
-            color: "black",
+            color: "#009ac0",
             marginRight: 20,
             marginTop: -5
           }}
@@ -153,7 +153,7 @@ const NavbarItem = () => {
           style={{
             width: 20,
             height: 20,
-            color: "black",
+            color: "#009ac0",
             marginRight: 20,
             marginTop: -5
           }}
