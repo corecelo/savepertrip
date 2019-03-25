@@ -3,7 +3,7 @@ import "./headerrightstyle.css";
 
 const HeaderRight = () => {
   return (
-    <div className="headerright-wrapper-spt d-flex flex-column justify-content-start align-items-center pt-3">
+    <div className="headerright-wrapper-spt d-xl-flex flex-column justify-content-start align-items-center pt-3 d-none">
       <div className="slider-header-wrapper-spt" />
       <div className="text-header-ad-wrapper mt-2 align-self-start pl-3">
         <h6>Save with our Deals</h6>

@@ -20,7 +20,7 @@ class App extends Component {
   componentDidMount() {
     this.setState({
       loading: false
-    });
+    })
   }
   render() {
     const { loading } = this.state;

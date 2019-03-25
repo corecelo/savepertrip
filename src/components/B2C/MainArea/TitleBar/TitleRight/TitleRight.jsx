@@ -7,25 +7,29 @@ import { useActions } from "easy-peasy";
 import useOnClickOutside from "use-onclickoutside";
 import "./titlerightstyle.css";
 
-const TitleRight = () => { 
+const TitleRight = () => {
   const userSetting = useStore(state => state.ui.userSetting);
   const notification = useStore(state => state.ui.notification);
   const toggleUserSetting = useActions(actions => actions.ui.toggleUserSetting);
   const toggleUserSettingFalse = useActions(
     actions => actions.ui.toggleUserSettingFalse
   );
-  const toggleNotification = useActions(actions => actions.ui.toggleNotification);
-  const toggleNotificationFalse = useActions(actions => actions.ui.toggleNotificationFalse);
-
+  const toggleNotification = useActions(
+    actions => actions.ui.toggleNotification
+  );
+  const toggleNotificationFalse = useActions(
+    actions => actions.ui.toggleNotificationFalse
+  );
 
   const ref = useRef(null);
+  const ref2 = useRef(null);
 
+  useOnClickOutside(ref2, toggleNotificationFalse);
   useOnClickOutside(ref, toggleUserSettingFalse);
-  useOnClickOutside(ref, toggleNotificationFalse);
 
   const handleMsgClick = e => {
     toggleNotification();
-  }
+  };
 
   const handleUserSetting = e => {
     toggleUserSetting();
@@ -33,7 +37,7 @@ const TitleRight = () => {
 
   return (
     <div className="userinfo-wrapper-sp d-flex justify-content-between align-items-center">
-      <div className="message-spt" ref={ref} onClick={handleMsgClick}> 
+      <div className="message-spt" ref={ref2} onClick={handleMsgClick}>
         <div
           style={{
             width: 24,
@@ -46,15 +50,17 @@ const TitleRight = () => {
         <div className="circle-mess-spt d-flex justify-content-between align-items-center">
           <p style={{ fontSize: 10 }}>2</p>
         </div>
-        
-        {notification && <div className="notification-spt"><ul className="notification-setting-spt">
-            <li>Notification 1</li>
-            <li>Notification 2</li>
-            <li>Notification 3</li>
-            <li>Notification 4</li>
-          </ul>
+
+        {notification && (
+          <div className="notification-spt">
+            <ul className="notification-setting-spt">
+              <li>Notification 1</li>
+              <li>Notification 2</li>
+              <li>Notification 3</li>
+              <li>Notification 4</li>
+            </ul>
           </div>
-        }
+        )}
       </div>
       <div
         className="user-spt d-flex justify-content-between align-items-center"

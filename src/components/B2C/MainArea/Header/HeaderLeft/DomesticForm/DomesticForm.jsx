@@ -11,7 +11,7 @@ const DomesticForm = () => {
   };
   return (
     <React.Fragment>
-      <div className="book-text-sp">
+      <div className="book-text-sp text-center text-xl-left">
         <p>Save on Flights</p>
         <h6 style={{ marginBottom: 30, letterSpacing: 0.5 }}>
           Honest Pricing. Genuine Savings

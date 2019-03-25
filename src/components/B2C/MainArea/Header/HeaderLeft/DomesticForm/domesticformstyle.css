@@ -19,6 +19,7 @@
 
 .form-wrapper-sp {
   padding-left: 25px;
+  height: 100%;
 }
 
 .input-header-spt {
@@ -152,4 +153,73 @@ input[type="number"] {
 
 .button-header-spt:hover {
   background-color: var(--button-color);
+}
+
+@media only screen and (max-width: 768px) {
+  /* Book Text CSS */
+  .book-text-sp {
+    padding-left: 0;
+  }
+  .form-wrapper-sp {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 100%;
+  }
+  .button-header-wrapper-sp {
+    padding-right: 35%;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+  .divider-header-left-spt {
+    background-color: #023c57;
+    margin-top: 25px;
+    width: 108%;
+    height: 1px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  /* Book Text CSS */
+  .book-text-sp {
+    padding-left: 0;
+  }
+  .form-wrapper-sp {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 100%;
+  }
+  .button-header-wrapper-sp {
+    padding-right: 28%;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+  .divider-header-left-spt {
+    background-color: #023c57;
+    margin-top: 25px;
+    width: 108%;
+    height: 1px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /* Book Text CSS */
+  .book-text-sp {
+    padding-left: 0;
+  }
+  .form-wrapper-sp {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 100%;
+  }
+  .button-header-wrapper-sp {
+    padding-right: 25%;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+  .divider-header-left-spt {
+    background-color: #023c57;
+    margin-top: 25px;
+    width: 108%;
+    height: 1px;
+  }
 }
