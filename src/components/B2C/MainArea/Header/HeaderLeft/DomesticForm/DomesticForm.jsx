@@ -2,10 +2,19 @@ import React from "react";
 import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap";
 import { Icon } from "react-icons-kit";
 import { ic_compare_arrows } from "react-icons-kit/md";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
 import "./domesticformstyle.css";
 import "react-tabs/style/react-tabs.css";
 
 const DomesticForm = () => {
+  const options = [
+    "Economy",
+    "Premium Economy",
+    "Business",
+    "Premium Business",
+    "First"
+  ];
   const handleRadionChange = e => {
     console.log(e);
   };
@@ -20,28 +29,61 @@ const DomesticForm = () => {
 
       <div className="form-wrapper-sp">
         <form>
-          <div className="d-flex">
-            <label className="container-spt">
-              One Way
-              <input
-                type="radio"
-                checked="checked"
-                name="radio"
-                onChange={handleRadionChange}
-              />
-              <span className="checkmark" />
-            </label>
-            <label className="container-spt">
-              Two City
-              <input type="radio" name="radio" />
-              <span className="checkmark" />
-            </label>
-            <label className="container-spt">
-              Multi City
-              <input type="radio" name="radio" />
-              <span className="checkmark" />
-            </label>
-          </div>
+          <FormGroup>
+            <Label for="flight-type" className="lable-header-form-spt">
+              Type of Flight
+            </Label>
+            <div className="d-flex">
+              <label className="container-spt">
+                Direct Flight
+                <input
+                  type="radio"
+                  checked="checked"
+                  name="radio"
+                  onChange={handleRadionChange}
+                />
+                <span className="checkmark" />
+              </label>
+              <label className="container-spt">
+                One Stop Flight
+                <input type="radio" name="radio" />
+                <span className="checkmark" />
+              </label>
+            </div>
+          </FormGroup>
+
+          <FormGroup>
+            <Label for="journey-type" className="lable-header-form-spt">
+              Way of Journey
+            </Label>
+            <div className="d-flex">
+              <label className="container-spt">
+                One Way
+                <input
+                  type="radio"
+                  checked="checked"
+                  name="radio"
+                  onChange={handleRadionChange}
+                />
+                <span className="checkmark" />
+              </label>
+              <label className="container-spt">
+                Return
+                <input type="radio" name="radio" />
+                <span className="checkmark" />
+              </label>
+              <label className="container-spt">
+                Multi Stop
+                <input type="radio" name="radio" />
+                <span className="checkmark" />
+              </label>
+              <label className="container-spt">
+                Advance
+                <input type="radio" name="radio" />
+                <span className="checkmark" />
+              </label>
+            </div>
+          </FormGroup>
 
           <Container fluid>
             <Row style={{ marginTop: 10 }}>
@@ -90,11 +132,41 @@ const DomesticForm = () => {
           </Container>
 
           <Container fluid>
-            <Row style={{ marginTop: 5 }}>
-              <Col xl="4" className="col-headerLeft-form-spt">
+            <Row style={{ marginTop: 10 }}>
+              <Col xl="5" className="col-headerLeft-form-spt">
                 <FormGroup>
+                  <Label for="cabin-type" className="lable-header-form-spt">
+                    Cabin Type
+                  </Label>
+                  <Dropdown
+                    options={options}
+                    placeholder="Select Option"
+                    controlClassName="domestic-form-dropdown-spt"
+                    placeholderClassName="domestic-form-dropdown-placeholder-spt"
+                    menuClassName="domestic-form-dropdown-placeholder-spt"
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+          </Container>
+
+          <Container fluid>
+            <Row style={{ marginTop: 5 }}>
+              <Col xl="4" className="col-headerLeft-form-spt d-flex">
+                <FormGroup className="mr-5">
                   <Label for="date" className="lable-header-form-spt">
                     Depart On
+                  </Label>
+                  <Input
+                    type="date"
+                    name="date"
+                    placeholder="Pick a Date"
+                    className="input-header-spt"
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label for="date" className="lable-header-form-spt">
+                    Arrival On
                   </Label>
                   <Input
                     type="date"
@@ -126,7 +198,7 @@ const DomesticForm = () => {
               <Col xl="3" className="col-headerLeft-form-spt">
                 <FormGroup>
                   <Label for="childrens" className="lable-header-form-spt">
-                    Childrens
+                    Children
                   </Label>
                   <Input
                     type="number"
