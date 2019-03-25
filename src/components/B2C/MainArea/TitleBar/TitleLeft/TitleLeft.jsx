@@ -18,7 +18,7 @@ const TitleLeft = () => {
         >
           <Icon size={"100%"} icon={briefcase} />
         </div>
-        <p>Corporate Login</p>
+        <p>Corporate Logi</p>
       </div>
     </div>
   );
