@@ -11,7 +11,7 @@ const DomesticForm = () => {
   };
   return (
     <React.Fragment>
-      <div className="book-text-sp">
+      <div className="book-text-sp text-center text-xl-left">
         <p>Save on Flights</p>
         <h6 style={{ marginBottom: 30, letterSpacing: 0.5 }}>
           Honest Pricing. Genuine Savings
@@ -66,7 +66,8 @@ const DomesticForm = () => {
                   style={{
                     width: 23,
                     height: 23,
-                    color: "#022d41"
+                    color: "#022d41",
+                    marginTop: 10
                   }}
                 >
                   <Icon size={"100%"} icon={ic_compare_arrows} />
@@ -159,7 +160,7 @@ const DomesticForm = () => {
               type="submit"
               className="btn btn-primary button-header-spt mt-2"
             >
-              Search Flight
+              Search Flights
             </button>
           </div>
         </form>

@@ -9,7 +9,8 @@ import Footer from "./Footer/Footer";
 const MainArea = () => {
   return (
     <Col
-      md="9"
+      xl="9"
+      lg="12"
       style={{ backgroundColor: "#EAF1F3", minHeight: "100vh" }}
       className="d-flex flex-column align-items-center"
     >

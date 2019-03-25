@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
+import "./index.css";
 import { StoreProvider, createStore } from "easy-peasy";
 import * as serviceWorker from "./serviceWorker";
 

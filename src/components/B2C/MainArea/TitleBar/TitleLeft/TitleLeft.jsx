@@ -11,7 +11,7 @@ const TitleLeft = () => {
           style={{
             width: 16,
             height: 16,
-            color: "white",
+            color: "#242a37",
             marginRight: 10,
             marginTop: -5
           }}

@@ -5,7 +5,8 @@ const Footer = () => {
   return (
     <div className="footer-wrapper-spt mt-3 d-flex justify-content-center align-items-center">
       <p>
-        All Rights Reserved @savepertrip.com. Designed and Developed by CoreCelo
+        All Rights Reserved @savepertrip.com. Designed and Developed by
+        CoreCelo.
       </p>
     </div>
   );

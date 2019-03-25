@@ -14,7 +14,7 @@ const Navbar = () => {
     <>
       <Col
         md="3"
-        className="navbar-wrapper-spt d-flex flex-column align-items-center"
+        className="navbar-wrapper-spt d-none d-xl-flex flex-column align-items-center"
       >
         <NavbarLogo />
 

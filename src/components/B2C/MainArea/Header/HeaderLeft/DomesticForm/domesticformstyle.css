@@ -19,21 +19,26 @@
 
 .form-wrapper-sp {
   padding-left: 25px;
+  height: 100%;
 }
 
 .input-header-spt {
   border: 1px solid #bdbdbd;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.226);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.226);
+  border-radius: 40px;
+  height: 35px;
 }
 
 .input-header-spt::placeholder {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
+  color: #acacac;
 }
 
 input[type="date"] {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
+  color: #acacac;
 }
 
 input[type="number"] {
@@ -103,7 +108,7 @@ input[type="number"] {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #00a8ff;
+  background: #009ac0;
 }
 
 .col-headerLeft-form-spt {
@@ -112,7 +117,7 @@ input[type="number"] {
 
 .lable-header-form-spt {
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
 }
 
@@ -129,10 +134,92 @@ input[type="number"] {
 
 .button-header-wrapper-sp {
   padding-right: 25px;
-  padding-top: 5px;
+  padding-top: 6px;
+  padding-bottom: 8px;
 }
 
 .button-header-spt {
-  background-color: #00a8ff;
+  background-color: var(--button-color);
   border: 0;
+  border-radius: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.button-header-spt:hover {
+  background-color: var(--button-color);
+}
+
+@media only screen and (max-width: 768px) {
+  /* Book Text CSS */
+  .book-text-sp {
+    padding-left: 0;
+  }
+  .form-wrapper-sp {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 100%;
+  }
+  .button-header-wrapper-sp {
+    padding-right: 35%;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+  .divider-header-left-spt {
+    background-color: #023c57;
+    margin-top: 25px;
+    width: 108%;
+    height: 1px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  /* Book Text CSS */
+  .book-text-sp {
+    padding-left: 0;
+  }
+  .form-wrapper-sp {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 100%;
+  }
+  .button-header-wrapper-sp {
+    padding-right: 28%;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+  .divider-header-left-spt {
+    background-color: #023c57;
+    margin-top: 25px;
+    width: 108%;
+    height: 1px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /* Book Text CSS */
+  .book-text-sp {
+    padding-left: 0;
+  }
+  .form-wrapper-sp {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 100%;
+  }
+  .button-header-wrapper-sp {
+    padding-right: 25%;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+  .divider-header-left-spt {
+    background-color: #023c57;
+    margin-top: 25px;
+    width: 108%;
+    height: 1px;
+  }
 }
