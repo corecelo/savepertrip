@@ -8,13 +8,18 @@ import "./domesticformstyle.css";
 import "react-tabs/style/react-tabs.css";
 
 const DomesticForm = () => {
-  const options = [
+  const journeyOptions = ["One Way", "Return", "Multi Stop", "Advance"];
+  const defaultJourney = journeyOptions[0];
+
+  const cabinOptions = [
     "Economy",
     "Premium Economy",
     "Business",
     "Premium Business",
     "First"
   ];
+  const defaultCabin = cabinOptions[0];
+
   const handleRadionChange = e => {
     console.log(e);
   };
@@ -52,38 +57,25 @@ const DomesticForm = () => {
             </div>
           </FormGroup>
 
-          <FormGroup>
-            <Label for="journey-type" className="lable-header-form-spt">
-              Way of Journey
-            </Label>
-            <div className="d-flex">
-              <label className="container-spt">
-                One Way
-                <input
-                  type="radio"
-                  checked="checked"
-                  name="radio"
-                  onChange={handleRadionChange}
-                />
-                <span className="checkmark" />
-              </label>
-              <label className="container-spt">
-                Return
-                <input type="radio" name="radio" />
-                <span className="checkmark" />
-              </label>
-              <label className="container-spt">
-                Multi Stop
-                <input type="radio" name="radio" />
-                <span className="checkmark" />
-              </label>
-              <label className="container-spt">
-                Advance
-                <input type="radio" name="radio" />
-                <span className="checkmark" />
-              </label>
-            </div>
-          </FormGroup>
+          <Container fluid>
+            <Row style={{ marginTop: 10 }}>
+              <Col xl="5" className="col-headerLeft-form-spt">
+                <FormGroup>
+                  <Label for="journey-type" className="lable-header-form-spt">
+                    Way of Journey
+                  </Label>
+                  <Dropdown
+                    options={journeyOptions}
+                    placeholder="Select Option"
+                    controlClassName="domestic-form-dropdown-spt"
+                    placeholderClassName="domestic-form-dropdown-placeholder-spt"
+                    menuClassName="domestic-form-dropdown-placeholder-spt"
+                    value={defaultJourney}
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+          </Container>
 
           <Container fluid>
             <Row style={{ marginTop: 10 }}>
@@ -139,11 +131,12 @@ const DomesticForm = () => {
                     Cabin Type
                   </Label>
                   <Dropdown
-                    options={options}
+                    options={cabinOptions}
                     placeholder="Select Option"
                     controlClassName="domestic-form-dropdown-spt"
                     placeholderClassName="domestic-form-dropdown-placeholder-spt"
                     menuClassName="domestic-form-dropdown-placeholder-spt"
+                    value={defaultCabin}
                   />
                 </FormGroup>
               </Col>
