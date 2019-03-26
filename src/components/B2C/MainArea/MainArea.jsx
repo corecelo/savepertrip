@@ -11,7 +11,11 @@ const MainArea = () => {
     <Col
       xl="9"
       lg="12"
-      style={{ backgroundColor: "#EAF1F3", minHeight: "100vh" }}
+      style={{
+        backgroundColor: "#EAF1F3",
+        minHeight: "100vh",
+        marginLeft: "25%"
+      }}
       className="d-flex flex-column align-items-center"
     >
       <TitleBar />
