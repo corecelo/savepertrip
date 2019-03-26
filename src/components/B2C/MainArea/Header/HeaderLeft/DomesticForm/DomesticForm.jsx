@@ -1,28 +1,136 @@
-import React from "react";
-import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap";
-import { Icon } from "react-icons-kit";
-import { ic_compare_arrows } from "react-icons-kit/md";
-import Dropdown from "react-dropdown";
-import "react-dropdown/style.css";
-import "./domesticformstyle.css";
-import "react-tabs/style/react-tabs.css";
+import React, { useState } from 'react';
+import { useActions } from 'easy-peasy';
+import { Container, Row, Col, FormGroup, Label, Input } from 'reactstrap';
+import { Icon } from 'react-icons-kit';
+import { ic_compare_arrows } from 'react-icons-kit/md';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+import './domesticformstyle.css';
+import 'react-tabs/style/react-tabs.css';
 
 const DomesticForm = () => {
-  const journeyOptions = ["One Way", "Return", "Multi Stop", "Advance"];
-  const defaultJourney = journeyOptions[0];
+  const [DirectFlight, setDirectFlight] = useState(false);
+  const [OneStopFlight, setOneStopFlight] = useState(false);
+  let [JourneyType, setJourneyType] = useState(1);
+  const [Origin, setOrigin] = useState('');
+  const [Destination, setDestination] = useState('');
+  let [FlightCabinClass, setFlightCabinClass] = useState(1);
+  const [PreferredDepartureTime, setPreferredDepartureTime] = useState('');
+  const [PreferredArrivalTime, setPreferredArrivalTime] = useState('');
+  const [AdultCount, setAdultCount] = useState(0);
+  const [ChildCount, setChildCount] = useState(0);
+  const [InfantCount, setInfantCount] = useState(0);
+
+  const getSearch = useActions(actions => actions.search.getSearch);
+
+  const journeyOptions = [
+    'One Way',
+    'Return',
+    'Multi Stop',
+    'Advance',
+    'Special Return'
+  ];
+  const defaultIndex = --JourneyType;
+  const defaultJourney = journeyOptions[defaultIndex];
 
   const cabinOptions = [
-    "Economy",
-    "Premium Economy",
-    "Business",
-    "Premium Business",
-    "First"
+    'All',
+    'Economy',
+    'Premium Economy',
+    'Business',
+    'Premium Business',
+    'First'
   ];
-  const defaultCabin = cabinOptions[0];
+  const defaultIndexCabin = --FlightCabinClass;
+  const defaultCabin = cabinOptions[defaultIndexCabin];
 
-  const handleRadionChange = e => {
-    console.log(e);
+  const handleSubmit = e => {
+    e.preventDefault();
+    const searchReq = {
+      EndUserIp: '',
+      TokenId: '',
+      AdultCount: AdultCount,
+      ChildCount: ChildCount,
+      InfantCount: InfantCount,
+      DirectFlight: DirectFlight,
+      OneStopFlight: OneStopFlight,
+      JourneyType: JourneyType,
+      PreferredAirlines: null,
+      Segments: [
+        {
+          Origin: Origin,
+          Destination: Destination,
+          FlightCabinClass: FlightCabinClass,
+          PreferredDepartureTime: PreferredDepartureTime,
+          PreferredArrivalTime: PreferredArrivalTime
+        }
+      ]
+    };
+    getSearch(searchReq);
   };
+
+  const handleDirectFlight = e => {
+    if (e.target.value === 'on') {
+      setDirectFlight(true);
+      setOneStopFlight(false);
+    }
+  };
+
+  const handleOneStopFlight = e => {
+    if (e.target.value === 'on') {
+      setDirectFlight(false);
+      setOneStopFlight(true);
+    }
+  };
+
+  const handleJourneyType = e => {
+    if (e.value === 'One Way') {
+      setJourneyType(1);
+    } else if (e.value === 'Return') {
+      setJourneyType(2);
+    } else if (e.value === 'Multi Stop') {
+      setJourneyType(3);
+    } else if (e.value === 'Advance') {
+      setJourneyType(4);
+    } else if (e.value === 'Special Return') {
+      setJourneyType(5);
+    }
+  };
+
+  const handleOrigin = e => {
+    setOrigin(e.target.value);
+  };
+
+  const handleDestination = e => {
+    setDestination(e.target.value);
+  };
+
+  const handleFlightCabinClass = e => {
+    if (e.value === 'All') {
+      setFlightCabinClass(1);
+    } else if (e.value === 'Economy') {
+      setFlightCabinClass(2);
+    } else if (e.value === 'Premium Economy') {
+      setFlightCabinClass(3);
+    } else if (e.value === 'Business') {
+      setFlightCabinClass(4);
+    } else if (e.value === 'Premium Business') {
+      setFlightCabinClass(5);
+    } else if (e.value === 'First') {
+      setFlightCabinClass(6);
+    }
+  };
+
+  const handleDepartDate = e => {
+    const date = e.target.value + 'T00: 00: 00';
+    setPreferredDepartureTime(date);
+  };
+
+  const handleArrivalDate = e => {
+    const date = e.target.value + 'T00: 00: 00';
+    setPreferredArrivalTime(date);
+  };
+
   return (
     <React.Fragment>
       <div className="book-text-sp text-center text-xl-left">
@@ -33,7 +141,7 @@ const DomesticForm = () => {
       </div>
 
       <div className="form-wrapper-sp">
-        <form>
+        <form onSubmit={handleSubmit}>
           <FormGroup>
             <Label for="flight-type" className="lable-header-form-spt">
               Type of Flight
@@ -43,15 +151,18 @@ const DomesticForm = () => {
                 Direct Flight
                 <input
                   type="radio"
-                  checked="checked"
                   name="radio"
-                  onChange={handleRadionChange}
+                  onChange={handleDirectFlight}
                 />
                 <span className="checkmark" />
               </label>
               <label className="container-spt">
                 One Stop Flight
-                <input type="radio" name="radio" />
+                <input
+                  type="radio"
+                  name="radio"
+                  onChange={handleOneStopFlight}
+                />
                 <span className="checkmark" />
               </label>
             </div>
@@ -71,6 +182,7 @@ const DomesticForm = () => {
                     placeholderClassName="domestic-form-dropdown-placeholder-spt"
                     menuClassName="domestic-form-dropdown-placeholder-spt"
                     value={defaultJourney}
+                    onChange={handleJourneyType}
                   />
                 </FormGroup>
               </Col>
@@ -89,6 +201,7 @@ const DomesticForm = () => {
                     name="from"
                     placeholder="Any worldwide city or airport"
                     className="input-header-spt"
+                    onChange={handleOrigin}
                   />
                 </FormGroup>
               </Col>
@@ -100,11 +213,11 @@ const DomesticForm = () => {
                   style={{
                     width: 23,
                     height: 23,
-                    color: "#022d41",
+                    color: '#022d41',
                     marginTop: 10
                   }}
                 >
-                  <Icon size={"100%"} icon={ic_compare_arrows} />
+                  <Icon size={'100%'} icon={ic_compare_arrows} />
                 </div>
               </Col>
               <Col xl="5" className="col-headerLeft-form-spt">
@@ -117,6 +230,7 @@ const DomesticForm = () => {
                     name="to"
                     placeholder="Any worldwide city or airport"
                     className="input-header-spt"
+                    onChange={handleDestination}
                   />
                 </FormGroup>
               </Col>
@@ -137,6 +251,7 @@ const DomesticForm = () => {
                     placeholderClassName="domestic-form-dropdown-placeholder-spt"
                     menuClassName="domestic-form-dropdown-placeholder-spt"
                     value={defaultCabin}
+                    onChange={handleFlightCabinClass}
                   />
                 </FormGroup>
               </Col>
@@ -155,6 +270,7 @@ const DomesticForm = () => {
                     name="date"
                     placeholder="Pick a Date"
                     className="input-header-spt"
+                    onChange={handleDepartDate}
                   />
                 </FormGroup>
                 <FormGroup>
@@ -166,6 +282,7 @@ const DomesticForm = () => {
                     name="date"
                     placeholder="Pick a Date"
                     className="input-header-spt"
+                    onChange={handleArrivalDate}
                   />
                 </FormGroup>
               </Col>
@@ -184,6 +301,7 @@ const DomesticForm = () => {
                     name="adults"
                     placeholder="1"
                     className="input-header-spt"
+                    onChange={event => setAdultCount(+event.target.value)}
                   />
                 </FormGroup>
               </Col>
@@ -198,6 +316,7 @@ const DomesticForm = () => {
                     name="childrens"
                     placeholder="1"
                     className="input-header-spt"
+                    onChange={event => setChildCount(+event.target.value)}
                   />
                 </FormGroup>
               </Col>
@@ -212,6 +331,7 @@ const DomesticForm = () => {
                     name="infants"
                     placeholder="1"
                     className="input-header-spt"
+                    onChange={event => setInfantCount(+event.target.value)}
                   />
                 </FormGroup>
               </Col>
