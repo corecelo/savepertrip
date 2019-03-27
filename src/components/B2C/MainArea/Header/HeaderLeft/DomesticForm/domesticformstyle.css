@@ -94,7 +94,7 @@ input[type="number"] {
 
 /* On mouse-over, add a grey background color */
 .container-spt:hover input ~ .checkmark {
-  background-color: #023c57;
+  background-color: #2e2e2e;
 }
 
 /* When the radio button is checked, add a blue background */
@@ -121,7 +121,7 @@ input[type="number"] {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #009ac0;
+  background: #ffcc00;
 }
 
 .col-headerLeft-form-spt {
@@ -162,6 +162,7 @@ input[type="number"] {
   font-size: 12px;
   padding-top: 8px;
   padding-bottom: 8px;
+  color: #2e2e2e;
 }
 
 .button-header-spt:hover {

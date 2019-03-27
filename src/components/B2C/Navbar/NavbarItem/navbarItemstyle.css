@@ -10,14 +10,14 @@
 }
 
 .active {
-  background-color: #009ac01e;
-  color: #00a8ff;
+  background-color: #ffcc00;
+  color: #2e2e2e;
 }
 
 .navitems-spt a {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
-  color: #009ac0;
+  color: #2e2e2e;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0px;
@@ -27,6 +27,6 @@
 }
 
 .navitems-spt a:hover {
-  background-color: #b1b1b12c;
-  color: #00a8ff;
+  background-color: #2e2e2e42;
+  color: #2e2e2e;
 }

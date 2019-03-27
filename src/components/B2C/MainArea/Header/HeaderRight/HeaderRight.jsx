@@ -1,10 +1,13 @@
 import React from "react";
 import "./headerrightstyle.css";
+import ad from "./ad.jpg";
 
 const HeaderRight = () => {
   return (
     <div className="headerright-wrapper-spt d-xl-flex flex-column justify-content-start align-items-center pt-3 d-none">
-      <div className="slider-header-wrapper-spt" />
+      <div className="slider-header-wrapper-spt">
+        <img src={ad} alt="ad" className="img-ad-spt" />
+      </div>
       <div className="text-header-ad-wrapper mt-2 align-self-start pl-3">
         <h6>Save with our Deals</h6>
         <div className="divider-header-right-spt" />

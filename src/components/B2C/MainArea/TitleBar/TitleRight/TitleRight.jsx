@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Icon } from "react-icons-kit";
 import { ic_message } from "react-icons-kit/md/ic_message";
 import { ic_arrow_drop_down } from "react-icons-kit/md/ic_arrow_drop_down";
+import { user } from "react-icons-kit/fa/user";
 import { useStore } from "easy-peasy";
 import { useActions } from "easy-peasy";
 import useOnClickOutside from "use-onclickoutside";
@@ -67,7 +68,16 @@ const TitleRight = () => {
         onClick={handleUserSetting}
         ref={ref}
       >
-        <div className="circle-user" />
+        <div className="circle-user d-flex justify-content-center align-items-center">
+          <div
+            style={{
+              color: "#2E2E2E",
+              marginTop: -3
+            }}
+          >
+            <Icon size={15} icon={user} />
+          </div>
+        </div>
         <p>Guest</p>
         <div
           style={{

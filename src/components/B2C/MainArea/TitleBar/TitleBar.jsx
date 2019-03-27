@@ -6,7 +6,7 @@ import "./titlebarstyle.css";
 
 const TitleBar = () => {
   return (
-    <div className="titlebar-wrapper-spt mt-3 d-xl-flex align-items-center d-none">
+    <div className="titlebar-wrapper-spt mt-4 d-xl-flex align-items-center d-none">
       <TitleLeft />
       <div className="auth-wrapper-spt d-flex">
         <TitleMid />

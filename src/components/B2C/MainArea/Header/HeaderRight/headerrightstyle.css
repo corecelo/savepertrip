@@ -2,6 +2,7 @@
   width: 25%;
   background-color: white;
   border-radius: 20px;
+  border: 2px solid #ffcc00;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.356);
 }
 
@@ -10,6 +11,12 @@
   height: 400px;
   border: 3px solid var(--main-bg-color);
   border-radius: 20px;
+  overflow: hidden;
+}
+
+.img-ad-spt {
+  width: 200px;
+  height: 394px;
 }
 
 .text-header-ad-wrapper {
