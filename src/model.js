@@ -23,11 +23,13 @@ const uiModel = {
 
 const searchModel = {
   searchResult: {},
+  bufferResult: {},
   getSearch: thunk(async (actions, payload, { getStoreState }) => {
     getStoreState().ui.loading = true;
     payload.history.push("/search");
     const response = await axios.post(`${URI}/api/search`, payload.searchReq);
     getStoreState().search.searchResult = response.data;
+    getStoreState().search.bufferResult = response.data;
     getStoreState().ui.loading = false;
   }),
   saveSearch: action((state, payload) => {
