@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import { useActions } from 'easy-peasy';
-import { Container, Row, Col, FormGroup, Label, Input } from 'reactstrap';
-import { Icon } from 'react-icons-kit';
-import { ic_compare_arrows } from 'react-icons-kit/md';
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
-import './domesticformstyle.css';
-import 'react-tabs/style/react-tabs.css';
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { useActions } from "easy-peasy";
+import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap";
+import { Icon } from "react-icons-kit";
+import { ic_compare_arrows } from "react-icons-kit/md";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
+import "./domesticformstyle.css";
+import "react-tabs/style/react-tabs.css";
 
-const DomesticForm = () => {
+const DomesticForm = props => {
   const [DirectFlight, setDirectFlight] = useState(false);
   const [OneStopFlight, setOneStopFlight] = useState(false);
   let [JourneyType, setJourneyType] = useState(1);
-  const [Origin, setOrigin] = useState('');
-  const [Destination, setDestination] = useState('');
+  const [Origin, setOrigin] = useState("");
+  const [Destination, setDestination] = useState("");
   let [FlightCabinClass, setFlightCabinClass] = useState(1);
-  const [PreferredDepartureTime, setPreferredDepartureTime] = useState('');
-  const [PreferredArrivalTime, setPreferredArrivalTime] = useState('');
+  const [PreferredDepartureTime, setPreferredDepartureTime] = useState("");
+  const [PreferredArrivalTime, setPreferredArrivalTime] = useState("");
   const [AdultCount, setAdultCount] = useState(0);
   const [ChildCount, setChildCount] = useState(0);
   const [InfantCount, setInfantCount] = useState(0);
@@ -24,22 +25,22 @@ const DomesticForm = () => {
   const getSearch = useActions(actions => actions.search.getSearch);
 
   const journeyOptions = [
-    'One Way',
-    'Return',
-    'Multi Stop',
-    'Advance',
-    'Special Return'
+    "One Way",
+    "Return",
+    "Multi Stop",
+    "Advance",
+    "Special Return"
   ];
   const defaultIndex = --JourneyType;
   const defaultJourney = journeyOptions[defaultIndex];
 
   const cabinOptions = [
-    'All',
-    'Economy',
-    'Premium Economy',
-    'Business',
-    'Premium Business',
-    'First'
+    "All",
+    "Economy",
+    "Premium Economy",
+    "Business",
+    "Premium Business",
+    "First"
   ];
   const defaultIndexCabin = --FlightCabinClass;
   const defaultCabin = cabinOptions[defaultIndexCabin];
@@ -47,8 +48,8 @@ const DomesticForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const searchReq = {
-      EndUserIp: '',
-      TokenId: '',
+      EndUserIp: "",
+      TokenId: "",
       AdultCount: AdultCount,
       ChildCount: ChildCount,
       InfantCount: InfantCount,
@@ -66,33 +67,37 @@ const DomesticForm = () => {
         }
       ]
     };
-    getSearch(searchReq);
+    const payload = {
+      history: props.history,
+      searchReq: searchReq
+    };
+    getSearch(payload);
   };
 
   const handleDirectFlight = e => {
-    if (e.target.value === 'on') {
+    if (e.target.value === "on") {
       setDirectFlight(true);
       setOneStopFlight(false);
     }
   };
 
   const handleOneStopFlight = e => {
-    if (e.target.value === 'on') {
+    if (e.target.value === "on") {
       setDirectFlight(false);
       setOneStopFlight(true);
     }
   };
 
   const handleJourneyType = e => {
-    if (e.value === 'One Way') {
+    if (e.value === "One Way") {
       setJourneyType(1);
-    } else if (e.value === 'Return') {
+    } else if (e.value === "Return") {
       setJourneyType(2);
-    } else if (e.value === 'Multi Stop') {
+    } else if (e.value === "Multi Stop") {
       setJourneyType(3);
-    } else if (e.value === 'Advance') {
+    } else if (e.value === "Advance") {
       setJourneyType(4);
-    } else if (e.value === 'Special Return') {
+    } else if (e.value === "Special Return") {
       setJourneyType(5);
     }
   };
@@ -106,28 +111,28 @@ const DomesticForm = () => {
   };
 
   const handleFlightCabinClass = e => {
-    if (e.value === 'All') {
+    if (e.value === "All") {
       setFlightCabinClass(1);
-    } else if (e.value === 'Economy') {
+    } else if (e.value === "Economy") {
       setFlightCabinClass(2);
-    } else if (e.value === 'Premium Economy') {
+    } else if (e.value === "Premium Economy") {
       setFlightCabinClass(3);
-    } else if (e.value === 'Business') {
+    } else if (e.value === "Business") {
       setFlightCabinClass(4);
-    } else if (e.value === 'Premium Business') {
+    } else if (e.value === "Premium Business") {
       setFlightCabinClass(5);
-    } else if (e.value === 'First') {
+    } else if (e.value === "First") {
       setFlightCabinClass(6);
     }
   };
 
   const handleDepartDate = e => {
-    const date = e.target.value + 'T00: 00: 00';
+    const date = e.target.value + "T00: 00: 00";
     setPreferredDepartureTime(date);
   };
 
   const handleArrivalDate = e => {
-    const date = e.target.value + 'T00: 00: 00';
+    const date = e.target.value + "T00: 00: 00";
     setPreferredArrivalTime(date);
   };
 
@@ -213,11 +218,11 @@ const DomesticForm = () => {
                   style={{
                     width: 23,
                     height: 23,
-                    color: '#022d41',
+                    color: "#022d41",
                     marginTop: 10
                   }}
                 >
-                  <Icon size={'100%'} icon={ic_compare_arrows} />
+                  <Icon size={"100%"} icon={ic_compare_arrows} />
                 </div>
               </Col>
               <Col xl="5" className="col-headerLeft-form-spt">
@@ -354,4 +359,4 @@ const DomesticForm = () => {
   );
 };
 
-export default DomesticForm;
+export default withRouter(DomesticForm);
