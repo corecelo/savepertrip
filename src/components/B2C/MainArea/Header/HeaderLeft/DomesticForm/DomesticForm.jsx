@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { useActions } from "easy-peasy";
+import classnames from "classnames";
 import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap";
 import { Icon } from "react-icons-kit";
 import { ic_compare_arrows } from "react-icons-kit/md";
@@ -22,7 +23,14 @@ const DomesticForm = props => {
   const [ChildCount, setChildCount] = useState(0);
   const [InfantCount, setInfantCount] = useState(0);
 
+  // State for zindex
+  const [fromInput, setFromInput] = useState(false);
+  const [toInput, setToInput] = useState(false);
+
   const getSearch = useActions(actions => actions.search.getSearch);
+  const toggleShowOverlayTrue = useActions(
+    actions => actions.ui.toggleShowOverlayTrue
+  );
 
   // const journeyOptions = [
   //   "One Way",
@@ -35,6 +43,7 @@ const DomesticForm = props => {
   // const defaultJourney = journeyOptions[defaultIndex];
 
   const cabinOptions = [
+    "Cabin Type",
     "All",
     "Economy",
     "Premium Economy",
@@ -110,6 +119,20 @@ const DomesticForm = props => {
     setDestination(e.target.value);
   };
 
+  const handleFocus = e => {
+    toggleShowOverlayTrue();
+    if (e.target.name === "from") {
+      setFromInput(true);
+      setToInput(false);
+      return false;
+    }
+
+    if (e.target.name === "to") {
+      setToInput(true);
+      setFromInput(false);
+    }
+  };
+
   const handleFlightCabinClass = e => {
     if (e.value === "All") {
       setFlightCabinClass(1);
@@ -182,7 +205,7 @@ const DomesticForm = props => {
                   </Label> */}
                   <div className="d-flex">
                     <label className="container-spt">
-                      One Way
+                      OneWay
                       <input
                         type="radio"
                         name="radio"
@@ -200,7 +223,7 @@ const DomesticForm = props => {
                       <span className="checkmark" />
                     </label>
                     <label className="container-spt">
-                      Multi Stop
+                      MultiStop
                       <input
                         type="radio"
                         name="radio"
@@ -218,7 +241,7 @@ const DomesticForm = props => {
                       <span className="checkmark" />
                     </label>
                     <label className="container-spt">
-                      Special Return
+                      SpecialReturn
                       <input
                         type="radio"
                         name="radio"
@@ -244,8 +267,11 @@ const DomesticForm = props => {
                     name="from"
                     // placeholder="Any worldwide city or airport"
                     placeholder="Flying from"
-                    className="input-header-spt"
+                    className={classnames("input-header-spt", {
+                      "input-pop-spt": fromInput
+                    })}
                     onChange={handleOrigin}
+                    onFocus={handleFocus}
                   />
                 </FormGroup>
               </Col>
@@ -258,7 +284,7 @@ const DomesticForm = props => {
                     width: 23,
                     height: 23,
                     color: "#022d41",
-                    marginTop: 10
+                    marginTop: -20
                   }}
                 >
                   <Icon size={"100%"} icon={ic_compare_arrows} />
@@ -274,8 +300,11 @@ const DomesticForm = props => {
                     name="to"
                     // placeholder="Any worldwide city or airport"
                     placeholder="Flying To"
-                    className="input-header-spt"
+                    className={classnames("input-header-spt", {
+                      "input-pop-spt": toInput
+                    })}
                     onChange={handleDestination}
+                    onFocus={handleFocus}
                   />
                 </FormGroup>
               </Col>
@@ -286,9 +315,9 @@ const DomesticForm = props => {
             <Row style={{ marginTop: 10 }}>
               <Col xl="5" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="cabin-type" className="label-header-form-spt">
+                  {/* <Label for="cabin-type" className="label-header-form-spt">
                     Cabin Type
-                  </Label>
+                  </Label> */}
                   <Dropdown
                     options={cabinOptions}
                     placeholder="Select Option"
@@ -307,9 +336,9 @@ const DomesticForm = props => {
             <Row style={{ marginTop: 5 }}>
               <Col xl="4" className="col-headerLeft-form-spt d-flex">
                 <FormGroup className="mr-5">
-                  <Label for="date" className="label-header-form-spt">
+                  {/* <Label for="date" className="label-header-form-spt">
                     Depart On
-                  </Label>
+                  </Label> */}
                   <Input
                     type="date"
                     name="date"
@@ -319,9 +348,9 @@ const DomesticForm = props => {
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="date" className="label-header-form-spt">
+                  {/* <Label for="date" className="label-header-form-spt">
                     Arrival On
-                  </Label>
+                  </Label> */}
                   <Input
                     type="date"
                     name="date"
@@ -338,13 +367,13 @@ const DomesticForm = props => {
             <Row style={{ marginTop: 5 }}>
               <Col xl="3" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="adults" className="label-header-form-spt">
+                  {/* <Label for="adults" className="label-header-form-spt">
                     Adults
-                  </Label>
+                  </Label> */}
                   <Input
                     type="number"
                     name="adults"
-                    placeholder="1"
+                    placeholder="Adults"
                     className="input-header-spt"
                     onChange={event => setAdultCount(+event.target.value)}
                   />
@@ -353,13 +382,13 @@ const DomesticForm = props => {
               <Col xl="1" />
               <Col xl="3" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="childrens" className="label-header-form-spt">
+                  {/* <Label for="childrens" className="label-header-form-spt">
                     Children
-                  </Label>
+                  </Label> */}
                   <Input
                     type="number"
                     name="childrens"
-                    placeholder="1"
+                    placeholder="Children"
                     className="input-header-spt"
                     onChange={event => setChildCount(+event.target.value)}
                   />
@@ -368,13 +397,13 @@ const DomesticForm = props => {
               <Col xl="1" />
               <Col xl="3" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="infants" className="label-header-form-spt">
+                  {/* <Label for="infants" className="label-header-form-spt">
                     Infants
-                  </Label>
+                  </Label> */}
                   <Input
                     type="number"
                     name="infants"
-                    placeholder="1"
+                    placeholder="Infants"
                     className="input-header-spt"
                     onChange={event => setInfantCount(+event.target.value)}
                   />

@@ -29,6 +29,11 @@
   height: 35px;
 }
 
+.input-pop-spt {
+  position: relative;
+  z-index: 999;
+}
+
 .input-header-spt::placeholder {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;

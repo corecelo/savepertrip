@@ -6,13 +6,19 @@ const uiModel = {
   userSetting: false,
   notification: false,
   loading: false,
+  showOverlay: false,
   toggleUserSetting: action(state => {
     state.userSetting = !state.userSetting;
   }),
   toggleUserSettingFalse: action(state => {
-    state.userSetting = false;
+    state.showOverlay = false;
   }),
-
+  toggleShowOverlayTrue: action(state => {
+    state.showOverlay = true;
+  }),
+  toggleShowOverlayFalse: action(state => {
+    state.showOverlay = false;
+  }),
   toggleNotification: action(state => {
     state.notification = !state.notification;
   }),

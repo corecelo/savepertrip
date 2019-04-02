@@ -8,8 +8,6 @@ const Advertisement = () => {
         <img src={ad} alt="ad" className="img-ad-spt" />
       </div>
       <div className="text-header-ad-wrapper mt-2 align-self-start pl-3">
-        <h6>Save More On Amazing Deals</h6>
-        <div className="divider-header-right-spt" />
         <p className="mt-2 offer-text-spt">Internationals Flight's Offer</p>
         <p className="offer-sub-text-spt">
           Grab up to Rs.15,000 Instant Cashback on International Flights. Use

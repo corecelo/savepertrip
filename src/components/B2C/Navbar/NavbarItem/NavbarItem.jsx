@@ -142,7 +142,7 @@ const NavbarItem = () => {
         >
           <Icon size={"100%"} icon={heart} />
         </div>
-        Insuarance
+        Insurance
       </NavLink>
       <NavLink
         to="/offline"

@@ -8,7 +8,7 @@
 
 .slider-header-wrapper-spt {
   width: 90%;
-  height: 400px;
+  height: 300px;
   border: 3px solid var(--main-bg-color);
   border-radius: 20px;
   overflow: hidden;
@@ -16,7 +16,7 @@
 
 .img-ad-spt {
   width: 200px;
-  height: 394px;
+  height: 300px;
 }
 
 .text-header-ad-wrapper {
