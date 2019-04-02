@@ -4,7 +4,7 @@ import DomesticForm from "./DomesticForm/DomesticForm";
 import "./headerleftstyle.css";
 import "react-tabs/style/react-tabs.css";
 import SearchResult from "./SearchResult/SearchResult";
-import { withRouter, Switch } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const HeaderLeft = () => {
   return (

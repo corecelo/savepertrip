@@ -12,12 +12,22 @@ const FlightFilter = () => {
 
   const UniqueResult = [...new Set(results)];
 
+  const handleChange = e => {
+    console.log(e.target);
+  };
+
   return (
     <div>
       {UniqueResult.length > 0 &&
         UniqueResult.map(result => (
           <div>
-            <input type="checkbox" checked name={result} value={result} />
+            <input
+              key={result}
+              type="checkbox"
+              name={result}
+              value={result}
+              onChange={handleChange}
+            />
             {result}
             <br />
           </div>
