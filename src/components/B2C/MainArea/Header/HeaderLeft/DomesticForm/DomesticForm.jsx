@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { useActions } from "easy-peasy";
+import classnames from "classnames";
 import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap";
 import { Icon } from "react-icons-kit";
 import { ic_compare_arrows } from "react-icons-kit/md";
@@ -22,7 +23,14 @@ const DomesticForm = props => {
   const [ChildCount, setChildCount] = useState(0);
   const [InfantCount, setInfantCount] = useState(0);
 
+  // State for zindex
+  const [fromInput, setFromInput] = useState(false);
+  const [toInput, setToInput] = useState(false);
+
   const getSearch = useActions(actions => actions.search.getSearch);
+  const toggleShowOverlayTrue = useActions(
+    actions => actions.ui.toggleShowOverlayTrue
+  );
 
   const journeyOptions = [
     "One Way",
@@ -108,6 +116,20 @@ const DomesticForm = props => {
 
   const handleDestination = e => {
     setDestination(e.target.value);
+  };
+
+  const handleFocus = e => {
+    toggleShowOverlayTrue();
+    if (e.target.name === "from") {
+      setFromInput(true);
+      setToInput(false);
+      return false;
+    }
+
+    if (e.target.name === "to") {
+      setToInput(true);
+      setFromInput(false);
+    }
   };
 
   const handleFlightCabinClass = e => {
@@ -205,8 +227,11 @@ const DomesticForm = props => {
                     type="text"
                     name="from"
                     placeholder="Any worldwide city or airport"
-                    className="input-header-spt"
+                    className={classnames("input-header-spt", {
+                      "input-pop-spt": fromInput
+                    })}
                     onChange={handleOrigin}
+                    onFocus={handleFocus}
                   />
                 </FormGroup>
               </Col>
@@ -234,8 +259,11 @@ const DomesticForm = props => {
                     type="text"
                     name="to"
                     placeholder="Any worldwide city or airport"
-                    className="input-header-spt"
+                    className={classnames("input-header-spt", {
+                      "input-pop-spt": toInput
+                    })}
                     onChange={handleDestination}
+                    onFocus={handleFocus}
                   />
                 </FormGroup>
               </Col>
