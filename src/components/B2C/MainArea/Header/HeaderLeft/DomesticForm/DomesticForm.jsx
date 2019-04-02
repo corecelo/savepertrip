@@ -10,8 +10,8 @@ import "./domesticformstyle.css";
 import "react-tabs/style/react-tabs.css";
 
 const DomesticForm = props => {
-  const [DirectFlight, setDirectFlight] = useState(false);
-  const [OneStopFlight, setOneStopFlight] = useState(false);
+  // const [DirectFlight, setDirectFlight] = useState(false);
+  // const [OneStopFlight, setOneStopFlight] = useState(false);
   let [JourneyType, setJourneyType] = useState(1);
   const [Origin, setOrigin] = useState("");
   const [Destination, setDestination] = useState("");
@@ -24,15 +24,15 @@ const DomesticForm = props => {
 
   const getSearch = useActions(actions => actions.search.getSearch);
 
-  const journeyOptions = [
-    "One Way",
-    "Return",
-    "Multi Stop",
-    "Advance",
-    "Special Return"
-  ];
-  const defaultIndex = --JourneyType;
-  const defaultJourney = journeyOptions[defaultIndex];
+  // const journeyOptions = [
+  //   "One Way",
+  //   "Return",
+  //   "Multi Stop",
+  //   "Advance",
+  //   "Special Return"
+  // ];
+  // const defaultIndex = --JourneyType;
+  // const defaultJourney = journeyOptions[defaultIndex];
 
   const cabinOptions = [
     "All",
@@ -53,8 +53,8 @@ const DomesticForm = props => {
       AdultCount: AdultCount,
       ChildCount: ChildCount,
       InfantCount: InfantCount,
-      DirectFlight: DirectFlight,
-      OneStopFlight: OneStopFlight,
+      // DirectFlight: DirectFlight,
+      // OneStopFlight: OneStopFlight,
       JourneyType: JourneyType,
       PreferredAirlines: null,
       Segments: [
@@ -74,19 +74,19 @@ const DomesticForm = props => {
     getSearch(payload);
   };
 
-  const handleDirectFlight = e => {
-    if (e.target.value === "on") {
-      setDirectFlight(true);
-      setOneStopFlight(false);
-    }
-  };
+  // const handleDirectFlight = e => {
+  //   if (e.target.value === "on") {
+  //     setDirectFlight(true);
+  //     setOneStopFlight(false);
+  //   }
+  // };
 
-  const handleOneStopFlight = e => {
-    if (e.target.value === "on") {
-      setDirectFlight(false);
-      setOneStopFlight(true);
-    }
-  };
+  // const handleOneStopFlight = e => {
+  //   if (e.target.value === "on") {
+  //     setDirectFlight(false);
+  //     setOneStopFlight(true);
+  //   }
+  // };
 
   const handleJourneyType = e => {
     if (e.value === "One Way") {
@@ -147,8 +147,8 @@ const DomesticForm = props => {
 
       <div className="form-wrapper-sp">
         <form onSubmit={handleSubmit}>
-          <FormGroup>
-            <Label for="flight-type" className="lable-header-form-spt">
+          {/* <FormGroup>
+            <Label for="flight-type" className="label-header-form-spt">
               Type of Flight
             </Label>
             <div className="d-flex">
@@ -171,24 +171,62 @@ const DomesticForm = props => {
                 <span className="checkmark" />
               </label>
             </div>
-          </FormGroup>
+          </FormGroup> */}
 
           <Container fluid>
             <Row style={{ marginTop: 10 }}>
               <Col xl="5" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="journey-type" className="lable-header-form-spt">
+                  {/* <Label for="journey-type" className="label-header-form-spt">
                     Way of Journey
-                  </Label>
-                  <Dropdown
-                    options={journeyOptions}
-                    placeholder="Select Option"
-                    controlClassName="domestic-form-dropdown-spt"
-                    placeholderClassName="domestic-form-dropdown-placeholder-spt"
-                    menuClassName="domestic-form-dropdown-placeholder-spt"
-                    value={defaultJourney}
-                    onChange={handleJourneyType}
-                  />
+                  </Label> */}
+                  <div className="d-flex">
+                    <label className="container-spt">
+                      One Way
+                      <input
+                        type="radio"
+                        name="radio"
+                        onChange={handleJourneyType}
+                      />
+                      <span className="checkmark" />
+                    </label>
+                    <label className="container-spt">
+                      Return
+                      <input
+                        type="radio"
+                        name="radio"
+                        onChange={handleJourneyType}
+                      />
+                      <span className="checkmark" />
+                    </label>
+                    <label className="container-spt">
+                      Multi Stop
+                      <input
+                        type="radio"
+                        name="radio"
+                        onChange={handleJourneyType}
+                      />
+                      <span className="checkmark" />
+                    </label>
+                    <label className="container-spt">
+                      Advance
+                      <input
+                        type="radio"
+                        name="radio"
+                        onChange={handleJourneyType}
+                      />
+                      <span className="checkmark" />
+                    </label>
+                    <label className="container-spt">
+                      Special Return
+                      <input
+                        type="radio"
+                        name="radio"
+                        onChange={handleJourneyType}
+                      />
+                      <span className="checkmark" />
+                    </label>
+                  </div>
                 </FormGroup>
               </Col>
             </Row>
@@ -198,13 +236,14 @@ const DomesticForm = props => {
             <Row style={{ marginTop: 10 }}>
               <Col xl="5" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="from" className="lable-header-form-spt">
+                  {/* <Label for="from" className="label-header-form-spt">
                     From
-                  </Label>
+                  </Label> */}
                   <Input
                     type="text"
                     name="from"
-                    placeholder="Any worldwide city or airport"
+                    // placeholder="Any worldwide city or airport"
+                    placeholder="Flying from"
                     className="input-header-spt"
                     onChange={handleOrigin}
                   />
@@ -227,13 +266,14 @@ const DomesticForm = props => {
               </Col>
               <Col xl="5" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="to" className="lable-header-form-spt">
+                  {/* <Label for="to" className="label-header-form-spt">
                     To
-                  </Label>
+                  </Label> */}
                   <Input
                     type="text"
                     name="to"
-                    placeholder="Any worldwide city or airport"
+                    // placeholder="Any worldwide city or airport"
+                    placeholder="Flying To"
                     className="input-header-spt"
                     onChange={handleDestination}
                   />
@@ -246,7 +286,7 @@ const DomesticForm = props => {
             <Row style={{ marginTop: 10 }}>
               <Col xl="5" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="cabin-type" className="lable-header-form-spt">
+                  <Label for="cabin-type" className="label-header-form-spt">
                     Cabin Type
                   </Label>
                   <Dropdown
@@ -267,7 +307,7 @@ const DomesticForm = props => {
             <Row style={{ marginTop: 5 }}>
               <Col xl="4" className="col-headerLeft-form-spt d-flex">
                 <FormGroup className="mr-5">
-                  <Label for="date" className="lable-header-form-spt">
+                  <Label for="date" className="label-header-form-spt">
                     Depart On
                   </Label>
                   <Input
@@ -279,7 +319,7 @@ const DomesticForm = props => {
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="date" className="lable-header-form-spt">
+                  <Label for="date" className="label-header-form-spt">
                     Arrival On
                   </Label>
                   <Input
@@ -298,7 +338,7 @@ const DomesticForm = props => {
             <Row style={{ marginTop: 5 }}>
               <Col xl="3" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="adults" className="lable-header-form-spt">
+                  <Label for="adults" className="label-header-form-spt">
                     Adults
                   </Label>
                   <Input
@@ -313,7 +353,7 @@ const DomesticForm = props => {
               <Col xl="1" />
               <Col xl="3" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="childrens" className="lable-header-form-spt">
+                  <Label for="childrens" className="label-header-form-spt">
                     Children
                   </Label>
                   <Input
@@ -328,7 +368,7 @@ const DomesticForm = props => {
               <Col xl="1" />
               <Col xl="3" className="col-headerLeft-form-spt">
                 <FormGroup>
-                  <Label for="infants" className="lable-header-form-spt">
+                  <Label for="infants" className="label-header-form-spt">
                     Infants
                   </Label>
                   <Input
