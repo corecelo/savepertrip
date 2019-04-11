@@ -4,6 +4,8 @@ import Spinner from "../../../../../test/Spinner";
 import "./searchResultStyle.css";
 import Flight from "./Flight";
 
+// comment
+
 const SearchResult = () => {
   const loading = useStore(state => state.ui.loading);
   const bufferResult = useStore(state => state.search.bufferResult);
