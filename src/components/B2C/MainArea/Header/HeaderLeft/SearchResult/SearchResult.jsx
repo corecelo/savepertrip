@@ -1,6 +1,6 @@
 import React from "react";
 import { useStore } from "easy-peasy";
-import Spinner from "../../../../../test/Spinner";
+import SpinnerMain from "../../../SpinnerMain";
 import "./searchResultStyle.css";
 import Flight from "./Flight";
 
@@ -11,7 +11,7 @@ const SearchResult = () => {
   const bufferResult = useStore(state => state.search.bufferResult);
   return loading ? (
     <div className="spinner-search-spt">
-      <Spinner />
+      <SpinnerMain />
     </div>
   ) : (
     <>

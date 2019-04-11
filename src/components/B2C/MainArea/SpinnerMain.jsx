@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "react-loader-spinner";
 
-const Spinner = () => {
+const SpinnerMain = () => {
   return (
     <div>
       <Loader type="Oval" color="#FFCC00" height="50" width="50" />
@@ -9,4 +9,4 @@ const Spinner = () => {
   );
 };
 
-export default Spinner;
+export default SpinnerMain;
