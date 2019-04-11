@@ -9,6 +9,7 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import "./domesticformstyle.css";
 import "react-tabs/style/react-tabs.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 const DomesticForm = props => {
   // const [DirectFlight, setDirectFlight] = useState(false);
@@ -16,7 +17,7 @@ const DomesticForm = props => {
   let [JourneyType, setJourneyType] = useState(1);
   const [Origin, setOrigin] = useState("");
   const [Destination, setDestination] = useState("");
-  let [FlightCabinClass, setFlightCabinClass] = useState(1);
+  const [FlightCabinClass, setFlightCabinClass] = useState(1);
   const [PreferredDepartureTime, setPreferredDepartureTime] = useState("");
   const [PreferredArrivalTime, setPreferredArrivalTime] = useState("");
   const [AdultCount, setAdultCount] = useState(0);
@@ -43,7 +44,6 @@ const DomesticForm = props => {
   // const defaultJourney = journeyOptions[defaultIndex];
 
   const cabinOptions = [
-    "Cabin Type",
     "All",
     "Economy",
     "Premium Economy",
@@ -51,8 +51,9 @@ const DomesticForm = props => {
     "Premium Business",
     "First"
   ];
-  const defaultIndexCabin = --FlightCabinClass;
-  const defaultCabin = cabinOptions[defaultIndexCabin];
+
+  const defaultIndex = FlightCabinClass - 1;
+  const defaultCabin = cabinOptions[defaultIndex];
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -80,6 +81,7 @@ const DomesticForm = props => {
       history: props.history,
       searchReq: searchReq
     };
+    console.log(payload);
     getSearch(payload);
   };
 
@@ -98,15 +100,16 @@ const DomesticForm = props => {
   // };
 
   const handleJourneyType = e => {
-    if (e.value === "One Way") {
+    console.log(e.target.value);
+    if (e.target.value === "One Way") {
       setJourneyType(1);
-    } else if (e.value === "Return") {
+    } else if (e.target.value === "Return") {
       setJourneyType(2);
-    } else if (e.value === "Multi Stop") {
+    } else if (e.target.value === "Multi Stop") {
       setJourneyType(3);
-    } else if (e.value === "Advance") {
+    } else if (e.target.value === "Advance") {
       setJourneyType(4);
-    } else if (e.value === "Special Return") {
+    } else if (e.target.value === "Special Return") {
       setJourneyType(5);
     }
   };
@@ -152,12 +155,13 @@ const DomesticForm = props => {
   const handleDepartDate = e => {
     const date = e.target.value + "T00: 00: 00";
     setPreferredDepartureTime(date);
-  };
-
-  const handleArrivalDate = e => {
-    const date = e.target.value + "T00: 00: 00";
     setPreferredArrivalTime(date);
   };
+
+  // const handleArrivalDate = e => {
+  //   const date = e.target.value + "T00: 00: 00";
+  //   setPreferredArrivalTime(date);
+  // };
 
   return (
     <React.Fragment>
@@ -209,6 +213,7 @@ const DomesticForm = props => {
                       <input
                         type="radio"
                         name="radio"
+                        value="One Way"
                         onChange={handleJourneyType}
                       />
                       <span className="checkmark" />
@@ -218,6 +223,7 @@ const DomesticForm = props => {
                       <input
                         type="radio"
                         name="radio"
+                        value="Return"
                         onChange={handleJourneyType}
                       />
                       <span className="checkmark" />
@@ -227,6 +233,7 @@ const DomesticForm = props => {
                       <input
                         type="radio"
                         name="radio"
+                        value="Multi Stop"
                         onChange={handleJourneyType}
                       />
                       <span className="checkmark" />
@@ -236,6 +243,7 @@ const DomesticForm = props => {
                       <input
                         type="radio"
                         name="radio"
+                        value="Advance"
                         onChange={handleJourneyType}
                       />
                       <span className="checkmark" />
@@ -245,6 +253,7 @@ const DomesticForm = props => {
                       <input
                         type="radio"
                         name="radio"
+                        value="Special Return"
                         onChange={handleJourneyType}
                       />
                       <span className="checkmark" />
@@ -320,12 +329,12 @@ const DomesticForm = props => {
                   </Label> */}
                   <Dropdown
                     options={cabinOptions}
-                    placeholder="Select Option"
+                    placeholder="Cabin Class Type"
                     controlClassName="domestic-form-dropdown-spt"
                     placeholderClassName="domestic-form-dropdown-placeholder-spt"
                     menuClassName="domestic-form-dropdown-placeholder-spt"
-                    value={defaultCabin}
                     onChange={handleFlightCabinClass}
+                    value={defaultCabin}
                   />
                 </FormGroup>
               </Col>
@@ -345,21 +354,6 @@ const DomesticForm = props => {
                     placeholder="Pick a Date"
                     className="input-header-spt"
                     onChange={handleDepartDate}
-                    style={{ width: "100%" }}
-                  />
-                </FormGroup>
-              </Col>
-              <Col xl="6" className="col-headerLeft-form-spt d-flex">
-                <FormGroup>
-                  {/* <Label for="date" className="label-header-form-spt">
-                    Arrival On
-                  </Label> */}
-                  <Input
-                    type="date"
-                    name="date"
-                    placeholder="Pick a Date"
-                    className="input-header-spt"
-                    onChange={handleArrivalDate}
                     style={{ width: "100%" }}
                   />
                 </FormGroup>
