@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { useActions } from "easy-peasy";
 import classnames from "classnames";
-import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap";
+import { Container, Row, Col, FormGroup, Input } from "reactstrap";
 import { Icon } from "react-icons-kit";
 import { ic_compare_arrows } from "react-icons-kit/md";
 import Dropdown from "react-dropdown";
