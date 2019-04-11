@@ -313,7 +313,7 @@ const DomesticForm = props => {
 
           <Container fluid>
             <Row style={{ marginTop: 10 }}>
-              <Col xl="5" className="col-headerLeft-form-spt">
+              <Col xl="11" className="col-headerLeft-form-spt">
                 <FormGroup>
                   {/* <Label for="cabin-type" className="label-header-form-spt">
                     Cabin Type
@@ -334,7 +334,7 @@ const DomesticForm = props => {
 
           <Container fluid>
             <Row style={{ marginTop: 5 }}>
-              <Col xl="4" className="col-headerLeft-form-spt d-flex">
+              <Col xl="6" className="col-headerLeft-form-spt d-flex">
                 <FormGroup className="mr-5">
                   {/* <Label for="date" className="label-header-form-spt">
                     Depart On
@@ -345,8 +345,11 @@ const DomesticForm = props => {
                     placeholder="Pick a Date"
                     className="input-header-spt"
                     onChange={handleDepartDate}
+                    style={{ width: "100%" }}
                   />
                 </FormGroup>
+              </Col>
+              <Col xl="6" className="col-headerLeft-form-spt d-flex">
                 <FormGroup>
                   {/* <Label for="date" className="label-header-form-spt">
                     Arrival On
@@ -357,6 +360,7 @@ const DomesticForm = props => {
                     placeholder="Pick a Date"
                     className="input-header-spt"
                     onChange={handleArrivalDate}
+                    style={{ width: "100%" }}
                   />
                 </FormGroup>
               </Col>
