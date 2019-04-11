@@ -159,7 +159,8 @@ input[type="number"] {
 }
 
 .button-header-spt {
-  background-color: var(--button-color);
+  /* background-color: var(--button-color); */
+  background-color: #e74c3c;
   border: 0;
   border-radius: 40px;
   padding-left: 20px;
@@ -169,7 +170,7 @@ input[type="number"] {
   font-size: 12px;
   padding-top: 8px;
   padding-bottom: 8px;
-  color: #2e2e2e;
+  color: #ffffff;
 }
 
 .button-header-spt:hover {
