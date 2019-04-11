@@ -9,7 +9,6 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import "./domesticformstyle.css";
 import "react-tabs/style/react-tabs.css";
-import "react-datepicker/dist/react-datepicker.css";
 
 const DomesticForm = props => {
   // const [DirectFlight, setDirectFlight] = useState(false);
