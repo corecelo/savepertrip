@@ -10,7 +10,8 @@
 }
 
 .active {
-  background-color: #ffcc00;
+  /* background-color: #ffcc00; */
+  background-color: #e4f1fe;
   color: #2e2e2e;
 }
 
@@ -27,6 +28,7 @@
 }
 
 .navitems-spt a:hover {
-  background-color: #2e2e2e42;
+  /* background-color: #2e2e2e42; */
+  background-color: #e4f1fe;
   color: #2e2e2e;
 }
